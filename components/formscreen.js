@@ -4,8 +4,7 @@ import 'react-native-gesture-handler';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Component } from 'react';
 import 'react-native-gesture-handler';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 
 class FormScreen extends Component {
   constructor()
@@ -14,8 +13,8 @@ class FormScreen extends Component {
     this.state={
       name:'',
       sex:'',
-      height:0,
-      weight:0
+      height:'',
+      weight:''
     }
   }
 
@@ -47,7 +46,7 @@ class FormScreen extends Component {
     collection.weight = this.state.weight
     console.warn(collection);
 
-    var url = 'https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002221250';
+    var url = 'https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata';
 
     fetch(url, {
       method: "POST",
