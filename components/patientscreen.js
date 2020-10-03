@@ -17,8 +17,7 @@ export default class PatientScreen extends Component {
     componentDidMount() {    
         this.eventSource = new RNEventSource('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/stream')
         this.eventSource.addEventListener('message', (data) => {
-            console.warn(data.temperature);
-            console.warn(data.pulse);
+            console.warn(data);
         });
 
         fetch('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata')
@@ -72,9 +71,3 @@ const styles = StyleSheet.create({
       justifyContent: "center"
     }
   });
-
-// export default function PatientScreen() {
-//     return (
-//       <Text>This is Patient 1's Profile</Text>
-//     );
-// }
