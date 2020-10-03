@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { StyleSheet, ActivityIndicator, FlatList, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import RNEventSource from '../utils/rneventsource';
+import HeartbeatGraph from './heartbeatgraph';
 
 export default class PatientScreen extends Component {
     constructor(props) {
@@ -37,7 +38,8 @@ export default class PatientScreen extends Component {
 
         return (
             <View style={styles.main}>
-                {isLoading ? <ActivityIndicator/> : (
+                <HeartbeatGraph raw={ data.pulse }/>
+                {/* {isLoading ? <ActivityIndicator/> : (
                     <FlatList
                         data = {data}
                         keyExtractor={({ id }, index) => id}
@@ -46,7 +48,7 @@ export default class PatientScreen extends Component {
                             // <Text>{item}</Text>
                         )}
                     />
-                )}
+                )} */}
             </View>
         )
     }
