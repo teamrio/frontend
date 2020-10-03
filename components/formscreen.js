@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, TextInput, Text, View } from 'react-native';
+import { StyleSheet, TextInput, Button, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Component } from 'react';
+import 'react-native-gesture-handler';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 export default class FormScreen extends Component {
-
   constructor()
   {
     super();
@@ -59,7 +61,7 @@ export default class FormScreen extends Component {
 
   render () {
     return (
-      <View>
+      <View style={styles.main}>
         <TextInput
           placeholder="Name"
           style={styles.input}
@@ -83,6 +85,7 @@ export default class FormScreen extends Component {
         <TouchableOpacity style={styles.btn} onPress={() => this.submit()}>
           <Text>Add Patient</Text>
         </TouchableOpacity>
+        <Button onPress={() => navigation.goBack()} title="Cancel" />
       </View>
     );
   }
@@ -100,5 +103,10 @@ const styles = StyleSheet.create({
     color: "#ffffff",
     justifyContent: "center",
     alignItems: "center"
+  },
+  main: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
   }
 });
