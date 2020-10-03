@@ -5,42 +5,43 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import FormScreen from './components/formscreen';
+import PatientScreen from './components/patientscreen';
 
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button 
-        title="Add Patient"
-        onPress={() => 
-          navigation.navigate("Form")}
-      />
       <Button
         title="View Patients"
         onPress={() =>
           navigation.navigate("Patient")}
       />
+      <Button
+        onPress={() => navigation.navigate('Form')}
+        title="Add Patient"
+      />
     </View>
   );
 }
 
-function PatientScreen() {
+const MainStack = createStackNavigator();
+const RootStack = createStackNavigator();
+
+function MainStackScreen() {
   return (
-    <Text>This is Patient 1's Profile</Text>
-  );
+    <MainStack.Navigator>
+      <MainStack.Screen name= "Dashboard" component={HomeScreen} />
+      <MainStack.Screen name="Patient" component={PatientScreen}/>
+    </MainStack.Navigator>
+  )
 }
 
-const Stack = createStackNavigator();
-
-function App() {
+export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Dashboard" component={HomeScreen} />
-        <Stack.Screen name="Patient" component={PatientScreen} />
-        <Stack.Screen name="Form" component={FormScreen} />
-      </Stack.Navigator>
+      <RootStack.Navigator mode="modal" headerMode="none">
+        <RootStack.Screen name="Main" component={MainStackScreen} />
+        <RootStack.Screen name="Form" component={FormScreen} />
+      </RootStack.Navigator>
     </NavigationContainer>
   );
 }
-
-export default App;
