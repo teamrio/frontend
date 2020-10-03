@@ -7,7 +7,7 @@ import 'react-native-gesture-handler';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-export default class FormScreen extends Component {
+class FormScreen extends Component {
   constructor()
   {
     super();
@@ -60,6 +60,7 @@ export default class FormScreen extends Component {
   }
 
   render () {
+    const { navigation } = this.props;
     return (
       <View style={styles.main}>
         <TextInput
@@ -110,3 +111,9 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default function(props) {
+  const navigation = useNavigation();
+
+  return <FormScreen {...props} navigation={navigation} />;
+}
