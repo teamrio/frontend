@@ -1,22 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, StyleSheet, Button, Text, View } from 'react-native';
-import t from 'tcomb-form-native';
 import 'react-native-gesture-handler';
-// import * as React from 'react';
-// import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import FormPage from "./components/formpage.js"
+import FormScreen from './components/formscreen';
 
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Button 
+        title="Add Patient"
+        onPress={() => 
+          navigation.navigate("Form")}
+      />
       <Button
-        title="Go to Patient 1"
+        title="View Patients"
         onPress={() =>
-          navigation.navigate("Patient")} />
+          navigation.navigate("Patient")}
+      />
     </View>
   );
 }
@@ -33,8 +35,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Dashboard" component={HomeScreen} />
         <Stack.Screen name="Patient" component={PatientScreen} />
+        <Stack.Screen name="Form" component={FormScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
