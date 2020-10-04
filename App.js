@@ -18,7 +18,7 @@ function MainStackScreen() {
     <MainStack.Navigator>
       <MainStack.Screen name= "Dashboard" component={HomeScreen} />
       <MainStack.Screen name="Patient" component={PatientScreen}/>
-      {/* <MainStack.Screen name="Vital Signs" component={VitalSignsPage}/> */}
+      <MainStack.Screen name="Vital Signs" component={VitalSignsPage}/>
     </MainStack.Navigator>
   )
 }
