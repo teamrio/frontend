@@ -12,14 +12,23 @@ export default function VitalPreview({ data }) {
                 <Text style={styles.viewall}>View all</Text>
             </View>
             <ScrollView horizontal={true} style={styles.content}>
-                <Text>Weight</Text>
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+                <PreviewCard />
+
+                {/* <Text>Weight</Text>
                 <Text>Height</Text>
                 <Text>BMI</Text>
                 <Text>Respirator Rate</Text>
                 <Text>Heart Rate</Text>
                 <Text>Blood Pressure</Text>
                 <Text>Oxygen Saturation</Text>
-                <Text>Temperature</Text>
+                <Text>Temperature</Text> */}
             </ScrollView>
         </View>
     );
