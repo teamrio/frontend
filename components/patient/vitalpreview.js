@@ -1,15 +1,26 @@
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { StyleSheet, ScrollView, ActivityIndicator, FlatList, Text, View } from 'react-native';
+import { StyleSheet, ScrollView, Button, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
+// import VitalSignsPage from './components/vitalsignspage';
 
 import PreviewCard from './vitalutils/previewcard';
 
-export default function VitalPreview({ data }) {
+export default function VitalPreview({ data, navigation }) {
     return (
         <View style={styles.main}>
             <View style={styles.nav}>
                 <Text style={styles.heading}>Vital Preview</Text>
-                <Text style={styles.viewall}>View all</Text>
+                <Text
+                    style={styles.viewall} 
+                    onPress={() => navigation.navigate('Vital Signs')}
+                >
+                    View all
+                </Text>
+                {/* <Button style={styles.viewall}
+                    onPress={() => navigation.navigate('Vital Signs')}
+                    title="View all"
+                /> */}
             </View>
             <ScrollView horizontal={true} style={styles.content}>
                 <PreviewCard />

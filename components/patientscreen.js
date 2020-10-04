@@ -3,7 +3,6 @@ import { Component } from 'react';
 import { StyleSheet, ActivityIndicator, FlatList, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import RNEventSource from '../utils/rneventsource';
-// import HeartbeatGraph from './heartbeatgraph';
 
 import Profile from './patient/profile';
 import VitalPreview from './patient/vitalpreview';
@@ -14,7 +13,8 @@ export default class PatientScreen extends Component {
         super(props);
 
         this.state = {
-            data: {},
+            biodata: {},
+            contdata: {},
             isLoading: true
         };
     }
@@ -22,14 +22,15 @@ export default class PatientScreen extends Component {
     componentDidMount() {    
         this.eventSource = new RNEventSource('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/stream')
         this.eventSource.addEventListener('message', (data) => {
-            console.warn(data);
+            this.setState({contdata: data})
+            console.warn(contdata);
         });
 
         fetch('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata')
             .then((response) => response.json())
             .then((json) => {
-                console.warn(json);
-                this.setState({ data: json}); 
+                this.setState({ biodata: json}); 
+                console.warn(biodata);
             })
             .catch((error) => console.error(error))
             .finally(() => {
@@ -38,13 +39,13 @@ export default class PatientScreen extends Component {
     }
 
     render() {
-        const { data, isLoading } = this.state;
+        // const { biodata, contdata, isLoading } = this.state;
 
         return (
             <View style={styles.main}>
-                <Profile data={this.data}/>
-                <VitalPreview />
-                <Pulse />
+                <Profile data={this.biodata}/>
+                <VitalPreview data={this.biodata} navigation={this.navigation}/>
+                <Pulse data={this.contdata}/>
                 {/* <HeartbeatGraph raw={ data.pulse }/> */}
                 {/* {isLoading ? <ActivityIndicator/> : (
                     <FlatList

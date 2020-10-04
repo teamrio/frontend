@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Button, View } from 'react-native';
+// import { StyleSheet, Button, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import FormScreen from './components/formscreen';
+// import FormScreen from './components/formscreen';
 import PatientScreen from './components/patientscreen';
 import HomeScreen from './components/homescreen';
 import VitalSignsPage from './components/vitalsignspage';

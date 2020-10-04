@@ -2,13 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 
-export default function Profile({ data }) {
+export default function Profile(props) {
     return (
         <View style={styles.main}>
             <View style={styles.profile}>
                 <Text>Picture</Text>
             </View>
             <View style={styles.content}>
+                {/* <Text style={styles.heading}>{props.name}</Text> */}
                 <Text style={styles.heading}>Kamlesh Prajapati</Text>
                 <Text style={styles.id}>#24662664643256</Text>
                 <Text style={styles.body}>24 Year | Male</Text>
