@@ -41,6 +41,10 @@ export default class PatientScreen extends Component {
             });        
     }
 
+    componentWillUnmount() {
+        this.eventSource.close();
+    }
+
     render() {
         const { biodata, contdata, isLoading } = this.state;
 
@@ -49,17 +53,6 @@ export default class PatientScreen extends Component {
                 <Profile data={this.biodata}/>
                 <VitalPreview data={this.biodata} navigation={this.navigation}/>
                 <Pulse data={this.contdata} />
-                {/* <HeartbeatGraph raw={ data.pulse }/> */}
-                {/* {isLoading ? <ActivityIndicator/> : (
-                    <FlatList
-                        data = {data}
-                        keyExtractor={({ id }, index) => id}
-                        renderItem={({ item }) => (
-                          <Text>{item.name}, {item.age}, {item.sex}, {item.blood}, {item.weight}, {item.height}, {item.race}, {item.address}, {item.admission}, {item.examination}</Text>
-                            // <Text>{item}</Text>
-                        )}
-                    />
-                )} */}
             </View>
         )
     }
@@ -68,7 +61,6 @@ export default class PatientScreen extends Component {
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#FFFFFF',
-        // fontFamily: '',
         height: windowHeight,
     }
   });

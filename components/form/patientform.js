@@ -6,46 +6,43 @@ import 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import t from 'tcomb-form-native';
 
-let Form = t.form.Form;
+let Form = t.form.Form.i18n;
 
 class PatientForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: {
                 name: 'Peter Gregrey',
                 age: 24,
                 sex: 'Male',
-                height: 180,
+                height: 180.0,
                 weight: 140,
                 blood: 'AB',
                 race: 'White',
                 address: 'Mountain View',
-                adm: '04/10/20',
+                adm: Date.now(),
                 exm: '04/10/20',
-                cmpts: 'Anosmia, Fever, Congestion',
-                t_hist: 'Paracetamol 650 taken',
-                f_hist: 'Fever in another family member',
-                covid: true                
+                // cmpts: 'Anosmia, Fever, Congestion',
+                // t_hist: 'Paracetamol 650 taken',
+                // f_hist: 'Fever in another family member',
+                // covid: true                
             }
         }
-        // this.PatientForm = createRef();
-    }
 
     // onChange(data) {
     //     this.setState({data});
     // }
 
     submitForm() {
-        // var data = this.refs.PatientForm.getValue();
-        // console.warn(data);
+        var info = this.refs.PatientForm.getValue();
+        console.warn(info);
         // var data = this.PatientForm.getValue();
-        // if (data) {
-        //     ToastAndroid.show('Validation successful', ToastAndroid.SHORT);
-        //     console.warn(data)
-        // } else {
-        //     ToastAndroid.show('Please fix errors', ToastAndroid.SHORT);
-        // }
+        if (info) {
+            ToastAndroid.show('Validation successful', ToastAndroid.SHORT);
+            console.warn(data)
+        } else {
+            ToastAndroid.show('Please fix errors', ToastAndroid.SHORT);
+        }
         // this.setState({data});
         // let info = {}
         // info.name = this.state.name,
@@ -61,18 +58,18 @@ class PatientForm extends Component {
         // info.cmpts = this.state.cmpts,
         // info.t_hist = this.state.t_hist,
         // info.f_hist = this.state.f_hist,
-        console.warn(this.data);
+        // console.warn(this.data);
     
-        var url = 'https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata';
+        // var url = 'https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata';
     
-        fetch(url, {
-          method: "POST",
-          body: JSON.stringify(this.data),
-          headers: new Headers({
-            "Content-Type": "application/json"
-          })
-        })
-        .then(res => res.json())
+        // fetch(url, {
+        //   method: "POST",
+        //   body: JSON.stringify(this.data),
+        //   headers: new Headers({
+        //     "Content-Type": "application/json"
+        //   })
+        // })
+        // .then(res => res.json())
     }
 
     render() {
@@ -131,12 +128,12 @@ class PatientForm extends Component {
                 N: 'Native Hawaiian or Other Pacific Islander'}, 
                 'race'),
             address: t.String,
-            adm: t.String,
+            adm: t.Date,
             exm: t.String,
-            cmpts: t.String,
-            t_hist: t.String,
-            f_hist: t.String,
-            covid: t.Boolean
+            // cmpts: t.String,
+            // t_hist: t.String,
+            // f_hist: t.String,
+            // covid: t.Boolean
         });
         return (
             <ScrollView>
@@ -147,7 +144,7 @@ class PatientForm extends Component {
                         // ref = { this.PatientForm }
                         type = { PatientModel }
                         options = { options }
-                        data = { this.state.data }
+                        data = { this.state }
                         style = { styles.form }
                         // onChange = { this.onChange }
                     />
