@@ -20,7 +20,7 @@ export default function Profile({ data }) {
 const styles = StyleSheet.create({
     main: {
         flexDirection: 'row',
-        backgroundColor: 'purple',
+        backgroundColor: 'skyblue',
         padding: 20,
         marginBottom: 10
     },
