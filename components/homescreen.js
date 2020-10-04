@@ -14,6 +14,10 @@ export default function HomeScreen({ navigation }) {
           onPress={() => navigation.navigate('Form')}
           title="Add Patient"
         />
+        <Button
+          onPress={() => navigation.navigate('Vital Signs')}
+          title="Vital Signs"
+        />
       </View>
     );
   }
