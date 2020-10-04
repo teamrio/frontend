@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, ScrollView, ActivityIndicator, FlatList, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function PreviewCard({ data }) {
     return (
         <View style={styles.card}>
+            {/* <Ionicons name="person-circle" size={32} color="green"/> */}
             <Text>Icon</Text>
             <Text>Data</Text>
             <Text>Last Updated</Text>
@@ -14,7 +17,7 @@ export default function PreviewCard({ data }) {
 
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: 'beige',
+        backgroundColor: 'skyblue',
         flexDirection: 'column',
         marginRight: 10,
         padding: 15,

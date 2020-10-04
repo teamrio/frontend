@@ -24,7 +24,7 @@ export default function Pulse({ data }) {
 
 const styles = StyleSheet.create({
     main: {
-        backgroundColor: 'skyblue',
+        // backgroundColor: 'skyblue',
         padding: 20,
         marginBottom: 10
     },

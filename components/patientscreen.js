@@ -39,13 +39,13 @@ export default class PatientScreen extends Component {
     }
 
     render() {
-        // const { biodata, contdata, isLoading } = this.state;
+        const { biodata, contdata, isLoading } = this.state;
 
         return (
             <View style={styles.main}>
                 <Profile data={this.biodata}/>
                 <VitalPreview data={this.biodata} navigation={this.navigation}/>
-                <Pulse data={this.contdata}/>
+                <Pulse data={this.contdata} />
                 {/* <HeartbeatGraph raw={ data.pulse }/> */}
                 {/* {isLoading ? <ActivityIndicator/> : (
                     <FlatList
@@ -63,24 +63,8 @@ export default class PatientScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    // container: {
-    //   backgroundColor: '#F5F5CF',
-    //   flex: 1,
-    //   justifyContent: 'center',
-    // },
-    // btn: {
-    //   backgroundColor: 'skyblue',
-    //   height: 40,
-    //   color: "#ffffff",
-    //   justifyContent: "center",
-    //   alignItems: "center"
-    // },
     main: {
-      flex: 1,
-    //   alignItems: "center",
-    //   justifyContent: "center",
-      flexDirection: 'column',
+        backgroundColor: '#FFFFFF',
+        fontFamily: ''
     }
   });
-
-  // 

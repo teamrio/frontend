@@ -10,7 +10,7 @@ export default function VitalPreview({ data, navigation }) {
     return (
         <View style={styles.main}>
             <View style={styles.nav}>
-                <Text style={styles.heading}>Vital Preview</Text>
+                <Text style={styles.heading}>Vital Signs</Text>
                 <Text
                     style={styles.viewall} 
                     onPress={() => navigation.navigate('Vital Signs')}
@@ -47,7 +47,7 @@ export default function VitalPreview({ data, navigation }) {
 
 const styles = StyleSheet.create({
     main: {
-        backgroundColor: 'skyblue',
+        // backgroundColor: 'skyblue',
         padding: 20,
         marginBottom: 10
     },
@@ -56,23 +56,9 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     content: {
-        // horizontal: true,
-        // horizontal scroll
     },
-    // main: {
-    //     flexDirection: 'row',
-    //     backgroundColor: 'purple',
-    //     padding: 20,
-    //     marginBottom: 10
-    // },
-    // profile: {
-    //     flex: 2
-    // },
-    // content: {
-    //     flex: 4
-    // },
     heading: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         flex: 4,
         // paddingLeft: 20,

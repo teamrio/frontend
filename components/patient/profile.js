@@ -1,12 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { useFonts, Josefin } from '@expo-google-fonts/josefin-sans';
 
 export default function Profile(props) {
+    let [fontsloaded] = useFonts({
+        Josefin,
+    });
+
     return (
         <View style={styles.main}>
             <View style={styles.profile}>
-                <Text>Picture</Text>
+                <Ionicons name="md-person" size={80} color="turquoise" style={styles.personicon}/>
             </View>
             <View style={styles.content}>
                 {/* <Text style={styles.heading}>{props.name}</Text> */}
@@ -21,12 +27,16 @@ export default function Profile(props) {
 const styles = StyleSheet.create({
     main: {
         flexDirection: 'row',
-        backgroundColor: 'skyblue',
+        // backgroundColor: 'skyblue',
         padding: 20,
-        marginBottom: 10
+        marginBottom: 10,
+        fontFamily: 'Josefin',
     },
     profile: {
-        flex: 2
+        flex: 2,
+    },
+    personicon: {
+        marginLeft: 20,
     },
     content: {
         flex: 4
