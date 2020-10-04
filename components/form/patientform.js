@@ -6,12 +6,13 @@ import 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import t from 'tcomb-form-native';
 
-let Form = t.form.Form.i18n;
+let Form = t.form.Form;
 
 class PatientForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            data: {
                 name: 'Peter Gregrey',
                 age: 24,
                 sex: 'Male',
@@ -25,16 +26,18 @@ class PatientForm extends Component {
                 // cmpts: 'Anosmia, Fever, Congestion',
                 // t_hist: 'Paracetamol 650 taken',
                 // f_hist: 'Fever in another family member',
-                // covid: true                
-            }
+                // covid: true   
+            }             
         }
+        this.formRef = createRef();
+    }
 
     // onChange(data) {
     //     this.setState({data});
     // }
 
     submitForm() {
-        var info = this.refs.PatientForm.getValue();
+        this.setState({data : this.formRef.current.value})
         console.warn(info);
         // var data = this.PatientForm.getValue();
         if (info) {
@@ -128,7 +131,7 @@ class PatientForm extends Component {
                 N: 'Native Hawaiian or Other Pacific Islander'}, 
                 'race'),
             address: t.String,
-            adm: t.Date,
+            adm: t.String,
             exm: t.String,
             // cmpts: t.String,
             // t_hist: t.String,
@@ -140,11 +143,11 @@ class PatientForm extends Component {
                 <Text style={styles.heading}>Patient Data</Text>
                 <View style={styles.contentContainer}>
                     <Form
-                        ref = 'PatientForm'
-                        // ref = { this.PatientForm }
+                        // ref = 'PatientForm'
+                        ref={this.formRef}
                         type = { PatientModel }
                         options = { options }
-                        data = { this.state }
+                        data = { this.state.data }
                         style = { styles.form }
                         // onChange = { this.onChange }
                     />
@@ -184,8 +187,9 @@ const styles = StyleSheet.create({
   });
 
 
-  export default function(props) {
+  export default function() {
     const navigation = useNavigation();
-  
-    return <PatientForm {...props} navigation={navigation} />;
+
+    // return <PatientForm {...props} navigation={navigation} />;
+    return <PatientForm navigation={navigation} />;
   }

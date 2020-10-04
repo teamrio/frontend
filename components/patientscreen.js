@@ -8,8 +8,8 @@ import Profile from './patient/profile';
 import VitalPreview from './patient/vitalpreview';
 import Pulse from './patient/pulse';
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+// const windowWidth = Dimensions.get('window').width;
+// const windowHeight = Dimensions.get('window').height;
 
 export default class PatientScreen extends Component {
     constructor(props) {
@@ -61,6 +61,6 @@ export default class PatientScreen extends Component {
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#FFFFFF',
-        height: windowHeight,
+        // height: 300,
     }
   });

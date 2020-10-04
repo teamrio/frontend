@@ -4,6 +4,7 @@ import { StyleSheet, ScrollView, ActivityIndicator, FlatList, Text, View } from 
 import 'react-native-gesture-handler';
 
 import PulseGraph from './pulseutils/pulsegraph'
+// import PulseGraph2 from 
 
 export default function Pulse({ data }) {
     return (

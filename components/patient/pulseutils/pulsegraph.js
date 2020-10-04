@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { LineChart } from 'react-native-chart-kit';
 
 export default function PulseGraph({ raw }) {
-    const scrnWidth = Dimensions.get("window").width;
+    // const scrnWidth = Dimensions.get("window").width;
 
     const data = {
         // label: "Time (in ms)",

@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Button, View, Text, Dimensions } from 'react-native';
+import { StyleSheet, Button, View, Text } from 'react-native';
 import 'react-native-gesture-handler';
 
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+// const windowWidth = Dimensions.get('window').width;
+// const windowHeight = Dimensions.get('window').height;
 
 export default function HomeScreen({ navigation }) {
     return (
@@ -35,7 +35,7 @@ export default function HomeScreen({ navigation }) {
   const styles = StyleSheet.create({
     main: {
         padding: 20,
-        height: windowHeight,
+        // height: 300,
     },
     btns: {
       marginTop: 20,
