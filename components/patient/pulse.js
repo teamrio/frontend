@@ -17,7 +17,6 @@ export default function Pulse({ data }) {
             </View>
             <View>
                 <PulseGraph />
-                {/* <Text>Graph</Text> */}
             </View>
         </View>
     );

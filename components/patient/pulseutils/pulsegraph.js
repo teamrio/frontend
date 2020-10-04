@@ -1020,11 +1020,13 @@ export default function PulseGraph({ raw }) {
     };
 
     return (
-      <View>
+      <View style={styles.graph}>
           <LineChart
             data = { data }
             width = { 350 }
-            height = { 90 }
+            height = { 100 }
+            withHorizontalLines = {false}
+            withVerticalLines = {false}
             // yAxisLabel = 'BPM'
             xAxisLabel = 'Time (in ms)'
             chartConfig = {{
@@ -1034,18 +1036,23 @@ export default function PulseGraph({ raw }) {
                 decimalPlaces: 2, // optional, defaults to 2dp
                 color: (opacity = 1) => `rgba(45, 45, 45, ${opacity})`,
                 // labelColor: (opacity = 1) => `rgba(45, 45, 45, ${opacity})`,
-                style: {
-                  borderRadius: 16
-                },
+                // style: {
+                //   borderRadius: 16
+                // },
                 propsForDots: {
                   r: "0.2",
-                  strokeWidth: "1",
-                  stroke: "#454545"
+                //   strokeWidth: "1",
+                //   stroke: "#454545"
                 }
               }}
-            bezier
+            // bezier
           />
       </View>
     );
   }
 
+  const styles = StyleSheet.create({
+    graph: {
+        marginTop: 20,
+    }
+  });
