@@ -28,7 +28,7 @@ export default class PatientScreen extends Component {
         fetch('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata')
             .then((response) => response.json())
             .then((json) => {
-                console.warn(json); // COMMENT OUT LATER
+                console.warn(json);
                 this.setState({ data: json}); 
             })
             .catch((error) => console.error(error))
@@ -42,7 +42,7 @@ export default class PatientScreen extends Component {
 
         return (
             <View style={styles.main}>
-                <Profile />
+                <Profile data={this.data}/>
                 <VitalPreview />
                 <Pulse />
                 {/* <HeartbeatGraph raw={ data.pulse }/> */}
@@ -62,22 +62,23 @@ export default class PatientScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-      backgroundColor: '#F5F5CF',
-      flex: 1,
-      justifyContent: 'center',
-    },
-    btn: {
-      backgroundColor: 'skyblue',
-      height: 40,
-      color: "#ffffff",
-      justifyContent: "center",
-      alignItems: "center"
-    },
+    // container: {
+    //   backgroundColor: '#F5F5CF',
+    //   flex: 1,
+    //   justifyContent: 'center',
+    // },
+    // btn: {
+    //   backgroundColor: 'skyblue',
+    //   height: 40,
+    //   color: "#ffffff",
+    //   justifyContent: "center",
+    //   alignItems: "center"
+    // },
     main: {
       flex: 1,
-      alignItems: "center",
-      justifyContent: "center"
+    //   alignItems: "center",
+    //   justifyContent: "center",
+      flexDirection: 'column',
     }
   });
 
