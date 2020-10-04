@@ -16,7 +16,8 @@ export default function Pulse({ data }) {
                 <Text style={styles.btn}>Last Month</Text>
             </View>
             <View>
-                <Text>Graph</Text>
+                <PulseGraph />
+                {/* <Text>Graph</Text> */}
             </View>
         </View>
     );
@@ -26,10 +27,10 @@ const styles = StyleSheet.create({
     main: {
         // backgroundColor: 'skyblue',
         padding: 20,
-        marginBottom: 10
+        marginBottom: 5
     },
     heading: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
     },
     lastUpdated: {

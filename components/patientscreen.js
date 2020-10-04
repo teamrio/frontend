@@ -8,6 +8,9 @@ import Profile from './patient/profile';
 import VitalPreview from './patient/vitalpreview';
 import Pulse from './patient/pulse';
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 export default class PatientScreen extends Component {
     constructor(props) {
         super(props);
@@ -23,14 +26,14 @@ export default class PatientScreen extends Component {
         this.eventSource = new RNEventSource('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/stream')
         this.eventSource.addEventListener('message', (data) => {
             this.setState({contdata: data})
-            console.warn(contdata);
+            // console.warn(contdata);
         });
 
         fetch('https://ivyhacks-nice-fox-hu.mybluemix.net/80655ec-04f2-11eb-adc1-0242ac120002130911/biodata')
             .then((response) => response.json())
             .then((json) => {
                 this.setState({ biodata: json}); 
-                console.warn(biodata);
+                // console.warn(biodata);
             })
             .catch((error) => console.error(error))
             .finally(() => {
@@ -65,6 +68,7 @@ export default class PatientScreen extends Component {
 const styles = StyleSheet.create({
     main: {
         backgroundColor: '#FFFFFF',
-        fontFamily: ''
+        // fontFamily: '',
+        height: windowHeight,
     }
   });

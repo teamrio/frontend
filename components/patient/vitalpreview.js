@@ -7,6 +7,8 @@ import 'react-native-gesture-handler';
 import PreviewCard from './vitalutils/previewcard';
 
 export default function VitalPreview({ data, navigation }) {
+    // console.log(data);
+
     return (
         <View style={styles.main}>
             <View style={styles.nav}>
@@ -49,7 +51,7 @@ const styles = StyleSheet.create({
     main: {
         // backgroundColor: 'skyblue',
         padding: 20,
-        marginBottom: 10
+        marginBottom: 5
     },
     nav: {
         flexDirection: 'row',

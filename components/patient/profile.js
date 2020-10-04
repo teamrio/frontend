@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useFonts, Josefin } from '@expo-google-fonts/josefin-sans';
+// import { useFonts, Josefin } from '@expo-google-fonts/josefin-sans';
 
 export default function Profile(props) {
-    let [fontsloaded] = useFonts({
-        Josefin,
-    });
+    // let [fontsloaded] = useFonts({
+    //     Josefin,
+    // });
+    // const [data, setData] = useState(props);
 
     return (
         <View style={styles.main}>
@@ -15,7 +16,7 @@ export default function Profile(props) {
                 <Ionicons name="md-person" size={80} color="turquoise" style={styles.personicon}/>
             </View>
             <View style={styles.content}>
-                {/* <Text style={styles.heading}>{props.name}</Text> */}
+                {/* <Text style={styles.heading}>{data.name}</Text> */}
                 <Text style={styles.heading}>Kamlesh Prajapati</Text>
                 <Text style={styles.id}>#24662664643256</Text>
                 <Text style={styles.body}>24 Year | Male</Text>
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         // backgroundColor: 'skyblue',
         padding: 20,
-        marginBottom: 10,
-        fontFamily: 'Josefin',
+        marginBottom: 5,
+        // fontFamily: 'Josefin',
     },
     profile: {
         flex: 2,
