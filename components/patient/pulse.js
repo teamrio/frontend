@@ -9,7 +9,7 @@ export default function Pulse({ data }) {
     return (
         <View style={styles.main}>
             <Text style={styles.heading}>Plethysmograph</Text>
-            <Text style={styles.lastUpdated}>Last Updated</Text>
+            <Text style={styles.lastUpdated}>04 Oct - present</Text>
             <View style={styles.setting}>
                 <Text style={styles.btn}>Current</Text>
                 <Text style={styles.btn}>Last Week</Text>
@@ -40,8 +40,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     btn: {
+        margin: 3,
+        borderRadius: 20,
+        borderColor: 'turquoise',
+        borderWidth: 2,
         padding: 10,
-        color: 'white',
-        backgroundColor: 'turquoise',
+        color: 'turquoise',
+        backgroundColor: 'white',
     }
   });

@@ -19,29 +19,16 @@ export default function VitalPreview({ data, navigation }) {
                 >
                     View all
                 </Text>
-                {/* <Button style={styles.viewall}
-                    onPress={() => navigation.navigate('Vital Signs')}
-                    title="View all"
-                /> */}
             </View>
             <ScrollView horizontal={true} style={styles.content}>
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-                <PreviewCard />
-
-                {/* <Text>Weight</Text>
-                <Text>Height</Text>
-                <Text>BMI</Text>
-                <Text>Respirator Rate</Text>
-                <Text>Heart Rate</Text>
-                <Text>Blood Pressure</Text>
-                <Text>Oxygen Saturation</Text>
-                <Text>Temperature</Text> */}
+                <PreviewCard icon='heartbeat' val='78' unit='bpm' date='04 Oct - 09:00'/>
+                <PreviewCard icon='temperature-high' val='37'unit='c' date='04 Oct - 16.40'/>
+                <PreviewCard icon='dot-circle' val='82' unit='mmHg' date='04 Oct - 08:40'/>
+                <PreviewCard icon='compress' val='90/60' unit='mmHg' date='04 Oct - 08:50'/>
+                <PreviewCard icon='weight' val='150' unit='lb' date='04 Oct - 08:40'/>
+                <PreviewCard icon='tape' val='179' unit='cm' date='04 Oct - 09:00'/>
+                <PreviewCard icon='wind' val='623' unit='L/min' date='04 Oct - 09:00'/>
+                <PreviewCard icon='arrow-alt-circle-down' val='24.9' unit='' date='04 Oct - 16:00'/>
             </ScrollView>
         </View>
     );
@@ -63,16 +50,10 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         flex: 4,
-        // paddingLeft: 20,
     },
     viewall: {
         fontSize: 10,
         flex: 2,
         textAlign: 'right',
-        // paddingRight: 20,
     },
-    // body: {
-    //     fontSize: 20,
-    //     fontWeight: "bold"
-    // }
   });
