@@ -8,7 +8,7 @@ import PulseGraph from './pulseutils/pulsegraph'
 export default function Pulse({ data }) {
     return (
         <View style={styles.main}>
-            <Text style={styles.heading}>Pulse Measure</Text>
+            <Text style={styles.heading}>Plethysmograph</Text>
             <Text style={styles.lastUpdated}>Last Updated</Text>
             <View style={styles.setting}>
                 <Text style={styles.btn}>Current</Text>
